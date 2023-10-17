@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.34031.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MorphServer", "MorphServer\MorphServer.csproj", "{396353DB-58A9-4E48-9F0A-F9D3AEE6D0DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{396353DB-58A9-4E48-9F0A-F9D3AEE6D0DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{396353DB-58A9-4E48-9F0A-F9D3AEE6D0DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{396353DB-58A9-4E48-9F0A-F9D3AEE6D0DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{396353DB-58A9-4E48-9F0A-F9D3AEE6D0DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EB47AEC-C611-40C8-BE38-FF9F0511CDE7}
+	EndGlobalSection
+EndGlobal
