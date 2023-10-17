@@ -16,6 +16,8 @@ namespace MorphServer {
         private static Server server;
         public static string IP = "", port = "";
 
+        public static string secure_string = "";
+
         static void collect_ip_and_port() {
             Console.WriteLine("Please enter the IP address or press enter to skip this step");
             IP = Console.ReadLine();
@@ -31,17 +33,24 @@ namespace MorphServer {
             }
         }
 
-        static void parse_config_file() {
-            Console.WriteLine("Parsed config file...");
+        static bool read_secure_string() {
+            if (!File.Exists("secure.txt")) {
+                Console.WriteLine("secure.txt not found!");
+                return false;
+            }
+            secure_string = File.ReadAllText("secure.txt");
+            return true;
         }
-
 
         static void Main(string[] args) {
             Console.WriteLine("MorphServer running...");
-            // parse_config_file();
-            collect_ip_and_port();
+            if (!read_secure_string()) {
+                Console.WriteLine("Unable to init the server!");
+                return;
+            }
 
-            server = new Server(IP, Convert.ToInt32(port));
+            collect_ip_and_port();
+            server = new Server(IP, Convert.ToInt32(port), secure_string);
             server.Run();
         }
     }

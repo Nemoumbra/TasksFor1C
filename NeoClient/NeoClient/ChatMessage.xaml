@@ -5,17 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NeoClient"
              mc:Ignorable="d" 
-             d:DesignHeight="80" d:DesignWidth="200">
-    <Grid>
-        <Image Height="59" HorizontalAlignment="Left" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="61" Margin="4,6,0,0" />
-        <TextBlock Height="17" HorizontalAlignment="Left" Margin="69,1,0,0" Name="textBlock1" Text="Username" VerticalAlignment="Top" Width="125" TextWrapping="Wrap" TextAlignment="Center">
-            <TextBlock.ContextMenu>
-                <ContextMenu>
-                    <MenuItem Header="Copy" Click="MenuItem_Click" />
-                </ContextMenu>
-            </TextBlock.ContextMenu>
-        </TextBlock>
-        <TextBox Name="textBox1" IsReadOnly="True" Margin="69,19,0,8" BorderBrush="#FF5B7BB6" HorizontalAlignment="Left" Width="125" TextWrapping="Wrap" />
+             d:DesignHeight="80" d:DesignWidth="400">
+    <Grid Width="380" Height="80">
+        <Image Height="59" HorizontalAlignment="Left" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="61" Margin="4,6,0,0" Source="/NeoClient;component/res/Morph.jpg"/>
+        <TextBox Name="textBox1" IsReadOnly="True" Margin="70,6,6,10" BorderBrush="#FF5B7BB6" TextWrapping="Wrap" />
 
     </Grid>
 </UserControl>

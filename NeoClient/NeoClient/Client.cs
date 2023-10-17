@@ -11,9 +11,31 @@ using System.IO;
 namespace NeoClient
 {
     class Client {
-        TcpClient client = null;
+        TcpClient client;
         byte[] data = null;
-        NetworkStream stream = null;
+        NetworkStream stream;
+
+        string ip;
+        int port;
         
+        public Client(string ip, int port) {
+            client = new TcpClient();
+            this.ip = ip;
+            this.port = port;
+        }
+
+        public void HandleSession(Object stateInfo) {
+            try {
+                client.Connect(ip, port);
+                stream = client.GetStream();
+                
+                while (true) {
+
+                }
+            }
+            catch (Exception e) {
+                
+            }
+        }
     }
 }

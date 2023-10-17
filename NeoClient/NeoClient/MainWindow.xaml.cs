@@ -13,13 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Threading;
+
 namespace NeoClient {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        private static Client client;
+        private string IP, port_str;
+        private int port;
+
         public MainWindow() {
             InitializeComponent();
+            //add_message("test morph", false);
+            //add_message("test neo", true);
         }
 
         void hide(UIElement elem) {
@@ -27,6 +35,14 @@ namespace NeoClient {
         }
         void show(UIElement elem) {
             elem.Visibility = Visibility.Visible;
+        }
+
+        void add_message(string msg, bool is_neo) {
+            ListBoxItem item = new ListBoxItem();
+            ChatMessage message_container = new ChatMessage(is_neo);
+            message_container.Text = msg;
+            item.Content = message_container;
+            listbox_msg.Items.Add(item);
         }
 
 
@@ -53,6 +69,33 @@ namespace NeoClient {
         }
 
         private void connect_button_Click(object sender, RoutedEventArgs e) {
+            // Let's try to connect!
+
+            if (localhost_checkbox.IsChecked == true) {
+                IP = "127.0.0.1";
+            }
+            else {
+                if (!ip_textbox.Text.Equals("")) {
+                    IP = ip_textbox.Text;
+                }
+                else {
+                    MessageBox.Show("Enter the IP!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+            }
+
+            if (!port_textbox.Text.Equals("")) {
+                port_str = port_textbox.Text;
+            }
+            else {
+                MessageBox.Show("Enter the port!", "Error!", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            port = Convert.ToInt32(port_str);
+
+            client = new Client(IP, port);
+            ThreadPool.QueueUserWorkItem(client.HandleSession);
+
             hide(connect_button);
             hide(ip_textbox);
             hide(ip_label);

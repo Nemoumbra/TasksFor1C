@@ -20,9 +20,17 @@ namespace NeoClient
     /// </summary>
     public partial class ChatMessage : UserControl
     {
-        public ChatMessage()
+        public ChatMessage(bool neo)
         {
             InitializeComponent();
+            if (neo) {
+                this.image1.Source = new BitmapImage(new Uri(@"pack://application:,,,/NeoClient;component/res/Neo.jpg"));
+            }
+        }
+
+        public string Text {
+            get { return textBox1.Text; }
+            set { textBox1.Text = value; }
         }
     }
 }

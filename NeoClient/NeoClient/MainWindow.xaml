@@ -21,6 +21,6 @@
         <TextBox x:Name="port_textbox" Height="40" HorizontalAlignment="Left" Margin="432,160,0,0" VerticalAlignment="Top" Width="153" Text="8888" />
         <Label x:Name="port_label" Content="Port" Height="28" HorizontalAlignment="Left" Margin="492,128,0,0" VerticalAlignment="Top" Width="36" Foreground="White" />
 
-        <ListBox x:Name="listbox_msg" HorizontalAlignment="Left" Height="312" Margin="357,70,0,0" VerticalAlignment="Top" Width="413" Visibility="Hidden" Background="Black" />
+        <ListBox x:Name="listbox_msg" HorizontalAlignment="Left" Height="312" Margin="357,70,0,0" VerticalAlignment="Top" Width="400" Visibility="Hidden" Background="Black" />
     </Grid>
 </Window>

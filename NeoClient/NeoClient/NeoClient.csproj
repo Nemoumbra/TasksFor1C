@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ChatMessage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -62,6 +66,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChatMessage.xaml.cs">
+      <DependentUpon>ChatMessage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -97,6 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="res\MatrixBg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\Morph.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="res\Neo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
