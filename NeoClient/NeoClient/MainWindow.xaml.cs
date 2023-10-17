@@ -26,8 +26,8 @@ namespace NeoClient {
 
         public MainWindow() {
             InitializeComponent();
-            //add_message("test morph", false);
-            //add_message("test neo", true);
+            add_message("test morph", false);
+            add_message("test neo", true);
         }
 
         void hide(UIElement elem) {
